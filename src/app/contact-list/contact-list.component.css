@@ -1,0 +1,53 @@
+.gray{
+    color: #929495;
+}
+.green{
+
+    color:#5dc3b5;
+    font-weight: bold;
+}
+.text-align-center{
+    text-align: center;
+}
+.background-dark-gray{
+background-color: #949596;
+}
+button{
+    outline: none !important;
+    color: #929495;
+    border: 1px solid transparent;
+    background-color: #e6e7e8;
+
+
+}
+button:focus{ 
+    background:#0ea093;
+    outline: none;
+}
+
+button:focus i{
+    color:white;
+    
+}
+
+ul {
+  list-style-type: none;
+}
+.background-red{
+    background-color: red ;
+}
+.color-white{
+    color: white;
+}
+.raduis{
+    border-radius: 20%;
+
+}
+.search-area{
+    width: 100%;
+    background-color: #e6e7e8;
+    border: 1px solid transparent;
+    padding: 15px;
+    outline: none;
+
+}

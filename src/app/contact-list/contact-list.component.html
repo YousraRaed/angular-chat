@@ -1,0 +1,72 @@
+
+<div class="container text-align-center background-dark-gray">
+    <div class="row ">
+      <button class="col pt-3 pb-3  "  (click) = toggleDisplay(false) (click) = messageDisplay(true)>
+          <i class="fa fa-commenting gray fa-2x "></i>
+        </button>
+        <button class="col pt-3 pb-3 "  (click) = toggleDisplay(false) (click) = messageDisplay(false)>
+            <i class="fa fa-user gray fa-2x "></i>
+          </button>
+          <button class="col pt-3 pb-3" 
+           (click) = toggleDisplay(true) 
+           (click) = messageDisplay(false)
+           >
+            <i class="fa fa-search gray fa-2x "></i>
+          </button>
+        </div>
+  </div>
+  <div [hidden] = "isShow" >
+      <input class="search-area" 
+      type="text" 
+      [(ngModel)]="searchText"
+      placeholder="Search here.....">
+
+      <div  >
+          <ul class="overflow-y"
+              
+          >
+            <li  *ngFor="let contact of (MessagesService.contactList | filter: searchText)" (click)="MessagesService.onClick($event,contact.id)">
+            <div class="d-flex flex-row">
+              <div class="d-flex flex-row w-100">
+              <img 
+              class="p-2 profile-img"
+              src="http://placehold.it/45"/>
+              <div class="p-2 align-self-center">
+                 {{contact.name}}
+               </div>
+              </div>
+              
+               </div>
+            </li>
+          </ul>
+        </div>
+  </div>
+  <div  [hidden] = "!isShow">
+    <ul id="list" class="overflow-y" >
+      <li  *ngFor="let contact of (MessagesService.contactList )" (click)="MessagesService.onClick($event,contact.id)">
+      <div class="d-flex flex-row">
+        <div class="d-flex flex-row w-100">
+        <img 
+        class="p-2 profile-img"
+        src="{{contact.img}}"/>
+        <div class="p-2 align-self-center">
+          <div [ngClass]="{'green': contact.id===MessagesService.selectedName}">
+           {{contact.name}}
+           </div>
+           <div [hidden] = "isDisplay">
+             {{contact.message}}
+           </div>
+         </div>
+        </div>
+         <div  class="p-2 d-flex flex-column " >
+           <div [hidden] = "isDisplay"  class="p-2 align-self-center">
+            {{contact.time}}
+           </div>
+           <div [hidden] = "isDisplay" class="background-red color-white raduis p-2 align-self-center">
+                 2
+             </div>
+         </div>
+         </div>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,19 @@
+<ul  >
+    <li  *ngFor="let contact of contactList">
+        <div  *ngIf="contact.id === MessagesService.idMessage">
+
+  <div class=" d-flex align-items-center">
+    <div class="col-11 d-flex align-items-center col">
+
+    <img class="profile-img ml-10-mt-5" src="{{contact.img}}"/>
+
+    <span class="ml-10-mt-5">{{contact.name}}</span>
+  </div>
+
+  <div class="col-1 ml-8 setting ">
+      <a href="#"><i class="fa fa-cog gray fa-2x "></i></a>
+    </div>
+</div>
+        </div>
+</li>
+</ul>

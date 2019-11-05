@@ -1,0 +1,21 @@
+.background{
+    background-color:#e6e7e8;
+    padding: 10px;
+    border-radius: 5px;
+}
+input{
+    border-radius: 5px;
+    outline: none ;
+}
+button {
+ border-radius: 5px;
+ margin-left: 8px;
+background-color: teal;
+color:white
+}
+button:focus{
+    outline: none;
+}
+.gray{
+    color: #929495;
+}
